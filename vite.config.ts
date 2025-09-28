@@ -12,7 +12,7 @@ import { fileURLToPath } from 'url'
 export default ({ mode }) => {
   const root = process.cwd()
   const env = loadEnv(mode, root)
-  const { VITE_VERSION, VITE_PORT, VITE_BASE_URL, VITE_API_URL } = env
+  const { VITE_VERSION = '1.0.0', VITE_PORT = '5173', VITE_BASE_URL = '/', VITE_API_URL = 'https://jsonplaceholder.typicode.com' } = env
 
   console.log(`🚀 API_URL = ${VITE_API_URL}`)
   console.log(`🚀 VERSION = ${VITE_VERSION}`)
@@ -21,7 +21,7 @@ export default ({ mode }) => {
     define: {
       __APP_VERSION__: JSON.stringify(VITE_VERSION)
     },
-    base: VITE_BASE_URL,
+    base: '/',
     server: {
       port: parseInt(VITE_PORT),
       proxy: {

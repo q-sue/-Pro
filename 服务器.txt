@@ -1,6 +1,0 @@
-cd /root/NVIDIA_CUDA-10.2_Samples/0_Simple/systemWideAtomics/审知Pro
-
-
-
- docker build -t my-web-app .
-docker run -d --rm -p 3006:3006 --name myapp_container myapp
